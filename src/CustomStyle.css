@@ -1,0 +1,10 @@
+
+.progress {
+    height: 100%;
+}
+
+#upgradeButton {
+    height: 100%;
+    width: 100%;
+    padding: unset;
+}

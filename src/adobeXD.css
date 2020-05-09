@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+@keyframes fadein {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#Bussines {
+    position: relative;
+    width: 355px;
+    height: 141px;
+    overflow: visible;
+    background-color: #CCC;
+    border-color: #000;
+    border-radius: 15px;
+}
+
+
+#levelBar {
+    position: absolute;
+    width: 154px;
+    height: 26px;
+    left: 120px;
+    top: 53px;
+    overflow: visible;
+}
+
+#arrowIcon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 0px;
+    top: 1px;
+    overflow: visible;
+}
+
+.background_o {
+    position: absolute;
+    overflow: visible;
+    width: 154px;
+    height: 26px;
+    left: 0px;
+    top: 0px;
+}
+
+#LevelText {
+    position: absolute;
+    left: 24px;
+    top: 1px;
+    overflow: visible;
+    width: 97px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: rgba(112,112,112,1);
+}
+
+#buyButton {
+    position: absolute;
+    width: 154px;
+    height: 59px;
+    left: 120px;
+    top: 79px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: upgrade.html;
+    cursor: pointer;
+}
+
+
+
+
+#manager {
+    position: absolute;
+    width: 74px;
+    height: 86px;
+    left: 278px;
+    top: 53px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: hireManager.html;
+    cursor: pointer;
+}
+
+#managerIcon {
+    position: absolute;
+    width: 74px;
+    height: 86px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+
+#producePanel {
+    position: absolute;
+    width: 113px;
+    height: 141px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+    --web-animation: fadein 0.3s ease-out;
+    --web-action-type: page;
+    --web-action-target: produce.html;
+    cursor: pointer;
+}
+
+#Icon {
+    position: absolute;
+    width: 113px;
+    height: 115px;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+
+#progressContainer {
+    position: absolute;
+    width: 113px;
+    height: 27px;
+    left: 0px;
+    top: 114px;
+    overflow: visible;
+    border-color: rgba(112,112,112,1);
+}
+.background_ {
+    position: absolute;
+    overflow: visible;
+    width: 113px;
+    height: 25.52px;
+    left: 0px;
+    top: 0px;
+}
+
+#earning {
+    position: absolute;
+    left: 65px;
+    top: 0px;
+    overflow: visible;
+    width: 45px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(112,112,112,1);
+}
+
+#timer {
+    position: absolute;
+    left: 5px;
+    top: 0px;
+    overflow: visible;
+    width: 38px;
+    white-space: nowrap;
+    text-align: left;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgba(112,112,112,1);
+}
+
+#title {
+    position: absolute;
+    left: 121px;
+    top: 9px;
+    overflow: hidden;
+    width: 235px;
+    height: 34px;
+    text-align: center;
+    font-family: Segoe UI;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    color: rgba(112,112,112,1);
+}
+
+
