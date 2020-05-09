@@ -8,7 +8,7 @@ function ButtonOptions(props) {
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
 
-    let level = 0;
+    let level = store.businesses[businessData.id].level;
     let isPurchasable = store.gold >= businessData.cost[level];
     var button;
     if (isPurchasable) {

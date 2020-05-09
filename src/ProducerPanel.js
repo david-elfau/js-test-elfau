@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 
+import { Context } from "./Store";  
+
 const ProducerPanel = (props) => {
+
+    const { store, dispatch } = useContext(Context);
     const { businessData } = props;
-    const level = 0;
+
+    let level = store.businesses[businessData.id].level;
     const time = 4;
     const progress = 100 * time / businessData.timer[level];
+
     return (
         <div onClick="application.goToTargetView(event)" id="producePanel">
             <img id="Icon" src={'./bussinessIcons/' + businessData.icon + '.png'} srcSet={'./bussinessIcons/' + businessData.icon + '.png 1x, ./bussinessIcons/' + businessData.icon + '@2x.png 2x'} />
@@ -17,7 +23,7 @@ const ProducerPanel = (props) => {
                     </rect>
                 </svg>
                 <div id="earning">
-                    <span>{businessData.production[level]}</span>
+                    <span>${businessData.production[level]}</span>
                 </div>
                 <div id="timer">
                     <span>{businessData.timer[level]}</span>
