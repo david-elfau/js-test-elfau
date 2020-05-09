@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import './adobeXD.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CustomStyle.css';
+import { Context, initialState, reducer } from "./Store";
 
-ReactDOM.render(<App />, document.getElementById('root'))
+
+function Hook() {
+    const [store, dispatch] = useReducer(reducer, initialState);
+    return (
+        <Context.Provider value={{ store, dispatch }}>
+            <App />
+
+        </Context.Provider>
+  );
+}
+
+ReactDOM.render(<Hook />, document.getElementById('root'))
