@@ -6,7 +6,8 @@ export const actionTypes = {
     HireManager: 'HireManager',
     StartProduction: 'StartProduction',
     EndProduction: 'EndProduction',
-    ReduceTimer: 'ReduceTimer'
+    ReduceTimer: 'ReduceTimer',
+    LoadData: 'LoadData'
 }
 
 
@@ -97,7 +98,9 @@ export const reducer = (state, action) => {
 
         case actionTypes.ReduceTimer:
             return { gold: state.gold, businesses: state.businesses, lastConnectedTimestam: Date.now() };
-          
+        case actionTypes.LoadData:
+            console.log("LOAD COOKIE")
+            return state;
     }
     return  state;
 };

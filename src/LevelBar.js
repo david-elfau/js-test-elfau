@@ -23,8 +23,11 @@ function LevelBar(props) {
     }
 
 
+
+
     return (
-        <div id="levelBar" className="levelBar">
+        <div id="levelBar" className="levelBar" hidden={level<1} >
+            
             {bar}
             {isPurchasable &&
                 <img id="arrowIcon" src="doubleArrow.png" srcSet="doubleArrow.png 1x, doubleArrow@2x.png 2x" />

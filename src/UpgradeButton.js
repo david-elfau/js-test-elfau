@@ -16,18 +16,23 @@ function ButtonOptions(props) {
         dispatch({ type: actionTypes.GoldUpdate, value: -businessData.cost[level] });
         dispatch({ type: actionTypes.LevelUpgrade, value: businessData.id });
     }
+    var UpgradeOrBuy = "Upgrade";
+    if (level < 1) {
+        UpgradeOrBuy = "Buy";
+    }
+
 
     var button;
     if (isPurchasable) {
         button = <Button id="upgradeButton" variant="success" size="lg"
             onClick={updateBussines}>
-            Upgrade<br />
+            {UpgradeOrBuy}<br />
             ${businessData.cost[level]}
         </Button>;
     } else {
         button = <Button id="upgradeButton" variant="secondary" size="lg"
             onClick={() => dispatch({ value: -10 })}>
-            Upgrade<br />
+            {UpgradeOrBuy}<br />
             ${businessData.cost[level]}
         </Button>;
     }
