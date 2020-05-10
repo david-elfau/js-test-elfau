@@ -14,7 +14,9 @@ class App extends Component {
         const { businesses } = this.state;
 
         return (
+
             <div className="container">
+
                 <ListBussines businessesData={businesses} />
                 <Gold />
             </div>

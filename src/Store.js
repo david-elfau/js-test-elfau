@@ -5,17 +5,19 @@ export const actionTypes = {
     LevelUpgrade: 'LevelUpgrade',
     HireManager: 'HireManager',
     StartProduction: 'StartProduction',
-
+    EndProduction: 'EndProduction',
+    ReduceTimer: 'ReduceTimer'
 }
 
 
 export const initialState = {
-    "gold": 100000,
+    "gold": 10,
+    "lastConnectedTimestam": -1,
     "businesses": [
         {
             "level": 1,
             "timestamp": -1,
-            "managerHired": false
+            "managerHired": true
         },
         {
             "level": 0,
@@ -67,7 +69,7 @@ export const initialState = {
 
 export const reducer = (state, action) => {
 
-    console.log("Action:" + action.type + "Value:" + action.value);
+    console.log("Action:" + action.type + " Value:" + action.value);
     console.log(state);
     switch (action.type) {
         case actionTypes.GoldUpdate:      
@@ -76,19 +78,26 @@ export const reducer = (state, action) => {
         case actionTypes.LevelUpgrade:
             var newBusinesses = state.businesses;
             newBusinesses[action.value].level++;
-            return { gold: state.gold, businesses: newBusinesses };
+            return { gold: state.gold, businesses: newBusinesses, lastConnectedTimestam: Date.now() };
 
         case actionTypes.HireManager:
             var newBusinesses = state.businesses;
             newBusinesses[action.value].managerHired=true;
-            return { gold: state.gold, businesses: newBusinesses };
+            return { gold: state.gold, businesses: newBusinesses, lastConnectedTimestam: Date.now()  };
 
         case actionTypes.StartProduction:
             var newBusinesses = state.businesses;
-            newBusinesses[action.value].timestamp = Date.now() ;
-            return { gold: state.gold, businesses: newBusinesses };
+            newBusinesses[action.value].timestamp = Date.now();
+            return { gold: state.gold, businesses: newBusinesses, lastConnectedTimestam: Date.now() };
 
+        case actionTypes.EndProduction:
+            var newBusinesses = state.businesses;
+            newBusinesses[action.value].timestamp = -1;
+            return { gold: state.gold, businesses: newBusinesses, lastConnectedTimestam: Date.now() };
 
+        case actionTypes.ReduceTimer:
+            return { gold: state.gold, businesses: state.businesses, lastConnectedTimestam: Date.now() };
+          
     }
     return  state;
 };
