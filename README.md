@@ -29,12 +29,12 @@ Technology used:
 * Adobe XD: I have create the skeleton on XD and exported to html and css to save time, event it is not the best way yo proceed
 
 
-### Known issues
+## Known issues
 
 
 
-### Atributions
-Icons made by:
+## Atributions
+I have used assets from this sources:
 * Flat icons: 	https://www.flaticon.com/authors/flat-icons
 * PixelMeetup: 	https://www.flaticon.com/authors/pixelmeetup
 * Freepik: 		https://www.flaticon.com/authors/freepik
