@@ -1,5 +1,5 @@
 import React, { Component, useContext } from 'react'
-import { Context } from "./Store";
+import { Context, actionTypes } from "./Store";
 
 import Button from 'react-bootstrap/Button'
 
@@ -9,11 +9,18 @@ function ButtonOptions(props) {
     const { businessData } = props;
 
     let level = store.businesses[businessData.id].level;
+
     let isPurchasable = store.gold >= businessData.cost[level];
+
+    const updateBussines = () => {
+        dispatch({ type: actionTypes.GoldUpdate, value: -businessData.cost[level] });
+        dispatch({ type: actionTypes.LevelUpgrade, value: businessData.id });
+    }
+
     var button;
     if (isPurchasable) {
         button = <Button id="upgradeButton" variant="success" size="lg"
-            onClick={() => dispatch({ value: +10 })}>
+            onClick={updateBussines}>
             Upgrade<br />
             ${businessData.cost[level]}
         </Button>;

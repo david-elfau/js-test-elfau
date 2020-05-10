@@ -8,3 +8,15 @@
     width: 100%;
     padding: unset;
 }
+
+#gold-counter {
+    background: #45a1d5;
+    width: 100px;
+    height: 30px;
+    position: fixed;
+    top: 0;
+}
+
+table{
+    border-spacing:10px 5px;
+}

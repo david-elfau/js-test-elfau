@@ -11,13 +11,12 @@ class App extends Component {
     };
     
     render() {
-
         const { businesses } = this.state;
 
         return (
             <div className="container">
-                <Gold />
                 <ListBussines businessesData={businesses} />
+                <Gold />
             </div>
         );
     }
