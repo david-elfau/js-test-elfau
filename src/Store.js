@@ -11,7 +11,7 @@ export const actionTypes = {
 
 
 export const initialState = {
-    "gold": 10,
+    "gold": 150,
     "lastConnectedTimestam": -1,
     "businesses": [
         {
@@ -69,8 +69,8 @@ export const initialState = {
 
 export const reducer = (state, action) => {
 
-    console.log("Action:" + action.type + " Value:" + action.value);
-    console.log(state);
+    //console.log("Action:" + action.type + " Value:" + action.value);
+    //console.log(state);
     switch (action.type) {
         case actionTypes.GoldUpdate:      
             return { gold: state.gold + action.value, businesses: state.businesses };
