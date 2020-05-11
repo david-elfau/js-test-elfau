@@ -8,7 +8,7 @@ import Cookies from 'universal-cookie';
 import Button from 'react-bootstrap/Button';
 
 function DataRecover(props) {
-    const businesses = data.businesses;
+    //const businesses = data.businesses;
     const { store, dispatch } = useContext(Context);
 
     var show = true;
@@ -28,7 +28,8 @@ function DataRecover(props) {
             //Initial gold
             dispatch({ type: actionTypes.GoldUpdate, value: cookieInfo.gold });
 
-            const businesses = props.businessesData.map((business, index) => {
+            //Iterate businesses
+            props.businessesData.map((business, index) => {
 
                 //Data loaded from cookie
                 var currentDate = Date.now();

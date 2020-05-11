@@ -1,10 +1,10 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useReducer } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/adobeXD.css'
 import './style/CustomStyle.css';
-import { Context, initialState, reducer, actionTypes } from "./Store";
+import { Context, initialState, reducer } from "./Store";
 
 
 function Hook() {

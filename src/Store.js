@@ -20,6 +20,7 @@ export const reducer = (state, action) => {
 
     const cookies = new Cookies();
 
+    var newBusinesses;
     switch (action.type) {
         case actionTypes.GoldUpdate:
             cookies.set('data', JSON.stringify({
@@ -36,8 +37,9 @@ export const reducer = (state, action) => {
                 goldEarnIdle: state.goldEarnIdle
             };
 
+
         case actionTypes.LevelUpgrade:
-            var newBusinesses = state.businesses;
+            newBusinesses = state.businesses;
             newBusinesses[action.value].level++;
 
             cookies.set('data', JSON.stringify({
@@ -55,7 +57,7 @@ export const reducer = (state, action) => {
             };
 
         case actionTypes.HireManager:
-            var newBusinesses = state.businesses;
+            newBusinesses = state.businesses;
             newBusinesses[action.value].managerHired = true;
 
             cookies.set('data', JSON.stringify({
@@ -73,7 +75,7 @@ export const reducer = (state, action) => {
             };
 
         case actionTypes.StartProduction:         
-            var newBusinesses = state.businesses;
+            newBusinesses = state.businesses;
 
             if (action.aux != null) {
                 //Force a starting production time for the recovery option
@@ -97,7 +99,7 @@ export const reducer = (state, action) => {
             };
 
         case actionTypes.EndProduction:
-            var newBusinesses = state.businesses;
+            newBusinesses = state.businesses;
             newBusinesses[action.value].timestamp = -1;
 
             cookies.set('data', JSON.stringify({
@@ -137,7 +139,7 @@ export const reducer = (state, action) => {
             }; 
 
         case actionTypes.SetBusinessState:
-            var newBusinesses = state.businesses;
+            newBusinesses = state.businesses;
             newBusinesses[action.value].level = action.level;
             newBusinesses[action.value].managerHired = action.managerHired;
 
