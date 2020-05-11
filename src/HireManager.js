@@ -7,7 +7,6 @@ function HireManagerPanel(props) {
     const { businessData } = props;
 
     const hireManagerAction = () => {
-
         if (store.gold >= businessData.managerCost) {
             dispatch({ type: actionTypes.HireManager, value: businessData.id });
             dispatch({ type: actionTypes.GoldUpdate, value: -businessData.managerCost });
@@ -17,24 +16,28 @@ function HireManagerPanel(props) {
     }
 
     let hireManagerPanel;
-    if (store.businesses[businessData.id].managerHired) {
-        hireManagerPanel = <div id="manager">
-            <img id="managerIcon" src={'./bussinessIcons/' + businessData.managerAsset + '.png'} srcSet={'./bussinessIcons/' + businessData.managerAsset + '.png 1x, ./bussinessIcons/' + businessData.managerAsset + '@2x.png 2x'} />
-        </div>;
+    if (store.businesses[businessData.id].level < 1) {
+        hireManagerPanel = <div id="manager" />;
     } else {
-        hireManagerPanel = <div onClick={hireManagerAction} id="manager">
-            <img id="managerIcon" src="./bussinessIcons/addManager.png" srcSet='./bussinessIcons/addManager.png 1x, ./bussinessIcons/addManager@2x.png 2x' />
-        </div>;
+        if (store.businesses[businessData.id].managerHired) {
+            hireManagerPanel = <div id="manager">
+                <img id="managerIcon" src={'./bussinessIcons/' + businessData.managerAsset + '.png'} srcSet={'./bussinessIcons/' + businessData.managerAsset + '.png 1x, ./bussinessIcons/' + businessData.managerAsset + '@2x.png 2x'} />
+            </div>;
+        } else {
+            hireManagerPanel = <div onClick={hireManagerAction} id="manager">
+                <img id="managerIcon" src="./bussinessIcons/addManager.png" srcSet='./bussinessIcons/addManager.png 1x, ./bussinessIcons/addManager@2x.png 2x' />
+            </div>;
+        }
     }
     return hireManagerPanel;
 }
+
 const HireManager = (props) => {
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
 
-
     return (
-        <HireManagerPanel businessData={businessData} />
+        <HireManagerPanel businessData={businessData} />       
     );
 }
 

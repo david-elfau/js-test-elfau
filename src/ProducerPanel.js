@@ -44,6 +44,8 @@ function ProducerPanel(props){
     return (
         <div onClick={startProduction} id="producePanel">
             <img id="Icon" src={'./bussinessIcons/' + businessData.icon + '.png'} srcSet={'./bussinessIcons/' + businessData.icon + '.png 1x, ./bussinessIcons/' + businessData.icon + '@2x.png 2x'} />
+
+            {level>0 &&             
             <div id="progressContainer">
                 <ProgressBar variant="success" animated now={progress} />
                
@@ -58,6 +60,7 @@ function ProducerPanel(props){
                     <span>{remainingTime}</span>
                 </div>
             </div>
+            }
         </div>
     );
 }

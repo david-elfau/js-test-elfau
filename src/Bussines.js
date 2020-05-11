@@ -11,9 +11,8 @@ const Business = (props) => {
         return (
             <div key={index} id="Bussines">
                 <div id="title">
-                    <span>{business.name}</span>
+                   {business.name}
                 </div>
-
                 <LevelBar businessData={business}/>
                 <UpgradeButton businessData={business} />
                 <HireManager businessData={business} />

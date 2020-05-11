@@ -43,28 +43,31 @@ function DataRecover(props) {
                 let remainingTime = productionTime - (Date.now() - cookieInfo.businesses[index].timestamp) * 0.001;
 
                 var goldEarned = 0;
+                if (cookieInfo.businesses[index].timestamp != -1) {
 
-                if (remainingTime <= 0 && cookieInfo.businesses[index].timestamp != -1) {
-                    if (managerHired) {
-                        var numFullProductions = parseInt(-remainingTime / productionTime);
-                        goldEarned = business.production[level] * numFullProductions;
+                    if (remainingTime <= 0 ) {
+                        if (managerHired) {
+                            var numFullProductions = parseInt(-remainingTime / productionTime);
+                            goldEarned = business.production[level] * numFullProductions;
 
-                        var newTimestamp = cookieInfo.businesses[index].timestamp + (1+numFullProductions) * productionTime * 1000;
+                            var newTimestamp = cookieInfo.businesses[index].timestamp + (1 + numFullProductions) * productionTime * 1000;
 
-                        dispatch({ type: actionTypes.StartProduction, value: business.id, extra: newTimestamp });
+                            dispatch({ type: actionTypes.StartProduction, value: business.id, aux: newTimestamp });
 
-                        let newRemainingTime = productionTime - (Date.now() - newTimestamp) * 0.001;
-                        console.log("[" + business.name + "] Claim and continue x" + numFullProductions + " remainingTime:" + newRemainingTime);
-                        
+                            let newRemainingTime = productionTime - (Date.now() - newTimestamp) * 0.001;
+                            console.log("[" + business.name + "] Claim and continue x" + numFullProductions + " remainingTime:" + newRemainingTime);
+
+                        } else {
+                            //Get and finish
+                            console.log("[" + business.name + "] Claim and finish");
+                            goldEarned = business.production[level];
+                            dispatch({ type: actionTypes.EndProduction, value: business.id });
+                        }
+                        dispatch({ type: actionTypes.GoldUpdate, value: goldEarned });
+                        dispatch({ type: actionTypes.AddGoldEarnIdle, value: goldEarned });
                     } else {
-                        //Get and finish
-                        console.log("[" + business.name + "] Claim and finish");
-                        goldEarned = business.production[level];
-                        dispatch({ type: actionTypes.EndProduction, value: business.id });
+                        dispatch({ type: actionTypes.StartProduction, value: business.id, aux: cookieInfo.businesses[index].timestamp  });
                     }
-
-                    dispatch({ type: actionTypes.GoldUpdate, value: goldEarned });
-                    dispatch({ type: actionTypes.AddGoldEarnIdle, value: goldEarned });
                 }
             })  
 
