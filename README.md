@@ -28,14 +28,6 @@ Technology used:
 * Bootstrap: I have used because it provide easy way to create components
 * Adobe XD: I have create the skeleton on XD and exported to html and css to save time, event it is not the best way yo proceed
 
-### Architecture
-
-Index
- -- App
-     -- DataRecover
-     -- Gold
-     -- ListBusineses
-         -- Business
 
 
 ### Data Management
