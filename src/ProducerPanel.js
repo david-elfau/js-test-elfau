@@ -32,19 +32,13 @@ function ProducerPanel(props){
     const startProduction = () => {
         var isPurchased = store.businesses[businessData.id].level > 0;
 
-        var isIdle = store.businesses[businessData.id].timestamp = -1;
+        var isIdle = store.businesses[businessData.id].timestamp == -1;
 
         if (isIdle && isPurchased) {
             dispatch({ type: actionTypes.StartProduction, value: businessData.id });
         }
     }
-    const endProduction = () => {
-        dispatch({ type: actionTypes.EndProduction, value: businessData.id });
-        dispatch({ type: actionTypes.GoldUpdate, value: businessData.production[store.businesses[businessData.id].level] });
-    }
-
-
-       
+    
 
 
     return (

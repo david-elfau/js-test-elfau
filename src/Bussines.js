@@ -9,33 +9,27 @@ import ProducerPanel from './ProducerPanel'
 const Business = (props) => {
     const businesses = props.businessesData.map((business, index) => {
         return (
-
-            <tr key={index}>
-                <div id="Bussines">
-                    <div id="title">
-                        <span>{business.name}</span>
-                    </div>
-
-                    <LevelBar businessData={business}/>
-                    <UpgradeButton businessData={business} />
-                    <HireManager businessData={business} />
-                    <ProducerPanel businessData={business} />
-
+            <div key={index} id="Bussines">
+                <div id="title">
+                    <span>{business.name}</span>
                 </div>
-            </tr>
+
+                <LevelBar businessData={business}/>
+                <UpgradeButton businessData={business} />
+                <HireManager businessData={business} />
+                <ProducerPanel businessData={business} />
+            </div>
         )
     })
 
-    return <tbody>{businesses}</tbody>
+    return businesses;
 
 }
 
 const ListBusiness = (props) => {
     const { businessesData } = props;
     return (
-        <table>
-            <Business businessesData={businessesData} />
-        </table>
+         <Business businessesData={businessesData} />
     );
 }
 

@@ -18,7 +18,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Technical Choices
+## Technical Details
 I've created a front end app which stores the data in cookies, because I didn't feel confortable
 
 Technology used:
@@ -28,8 +28,23 @@ Technology used:
 * Bootstrap: I have used because it provide easy way to create components
 * Adobe XD: I have create the skeleton on XD and exported to html and css to save time, event it is not the best way yo proceed
 
+### Data Management
+Data is split in static and user data.
+Static includes:
+* Info about businesses
+*
+*
+User data includes:
+* State of the businesses
+* Gold balance
+* 
+
+
+#TODO: MORE DETAILS
 
 ## Known issues
+List of things I would do better:
+*
 
 
 

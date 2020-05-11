@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { Context, actionTypes } from "./Store";
-import Alert from 'react-bootstrap/Alert'
 
 
 function HireManagerPanel(props) {

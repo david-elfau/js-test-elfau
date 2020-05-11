@@ -1,20 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: none;
-}
 
-@keyframes fadein {
 
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 #Bussines {
     position: relative;
@@ -77,9 +62,6 @@
     left: 120px;
     top: 79px;
     overflow: visible;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: upgrade.html;
     cursor: pointer;
 }
 
@@ -93,9 +75,6 @@
     left: 278px;
     top: 53px;
     overflow: visible;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: hireManager.html;
     cursor: pointer;
 }
 
@@ -115,9 +94,6 @@
     left: 0px;
     top: 0px;
     overflow: visible;
-    --web-animation: fadein 0.3s ease-out;
-    --web-action-type: page;
-    --web-action-target: produce.html;
     cursor: pointer;
 }
 

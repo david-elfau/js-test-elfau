@@ -1,27 +1,33 @@
-import React, { Component } from 'react'
+    import React, { useReducer, useEffect } from 'react'
 import data from './data/data.json'
 import ListBussines from './Bussines'
 import Gold from './Gold'
+import Welcome from './Welcome'
+import { Context, initialState, reducer, actionTypes } from "./Store";
 
+function App(props) {
 
-class App extends Component {
+    const [store, dispatch] = useReducer(reducer, initialState);
+    const businesses = data.businesses;
 
-    state = {        
-        businesses: data.businesses 
-    };
-    
-    render() {
-        const { businesses } = this.state;
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            dispatch({ type: actionTypes.ReduceTimer });
+        }, 100);
 
-        return (
+        // clear interval on re-render to avoid memory leaks
+        return () => clearInterval(intervalId);
+        // add timeLeft as a dependency to re-rerun the effect
+        // when we update it
+    },[]);
 
-            <div className="container">
-
-                <ListBussines businessesData={businesses} />
-                <Gold />
-            </div>
+    return (
+        <div className="container">
+            <ListBussines businessesData={businesses} />
+            <Gold />
+            <Welcome businessesData={businesses} />
+        </div>
         );
-    }
 }
 
 export default App

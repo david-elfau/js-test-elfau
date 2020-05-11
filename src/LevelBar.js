@@ -23,8 +23,6 @@ function LevelBar(props) {
     }
 
 
-
-
     return (
         <div id="levelBar" className="levelBar" hidden={level<1} >
             
