@@ -10,67 +10,11 @@ export const actionTypes = {
     EndProduction: 'EndProduction',
     ReduceTimer: 'ReduceTimer',
     LoadData: 'LoadData',
-    AddGoldEarnIdle: 'AddGoldEarnIdle'
+    AddGoldEarnIdle: 'AddGoldEarnIdle',
+    SetBusinessState: "SetBusinessState"
 }
 
 
-export const initialState = {
-    "gold": 150,
-    "lastConnectedTimestam": -1,
-    "goldEarnIdle": 0,
-    "businesses": [
-        {
-            "level": 1,
-            "timestamp": -1,
-            "managerHired": true
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        }
-    ] 
-};
 
 export const reducer = (state, action) => {
 
@@ -84,7 +28,6 @@ export const reducer = (state, action) => {
                 lastConnectedTimestam: Date.now(),
                 goldEarnIdle: state.goldEarnIdle
             }), { path: '/', maxAge: 31536000});
-
 
             return {
                 gold: state.gold + action.value,
@@ -191,22 +134,89 @@ export const reducer = (state, action) => {
                 businesses: state.businesses,
                 lastConnectedTimestam: Date.now(),
                 goldEarnIdle: state.goldEarnIdle
+            }; 
+
+        case actionTypes.SetBusinessState:
+            var newBusinesses = state.businesses;
+            newBusinesses[action.value].level = action.level;
+            newBusinesses[action.value].managerHired = action.managerHired;
+
+            cookies.set('data', JSON.stringify({
+                gold: state.gold,
+                businesses: newBusinesses,
+                lastConnectedTimestam: Date.now(),
+                goldEarnIdle: state.goldEarnIdle
+            }), { path: '/', maxAge: 31536000 });
+
+            return {
+                gold: state.gold,
+                businesses: newBusinesses,
+                lastConnectedTimestam: Date.now(),
+                goldEarnIdle: state.goldEarnIdle
             };
 
-        case actionTypes.LoadData:
-            if (state.lastConnectedTimestam == -1) {
-                var cookieInfo = cookies.get('data');
-                if (cookieInfo) {
-                    console.log("Recuperar cookies");
-                    console.log(cookieInfo);
-                    return cookieInfo;
-                } else {
-                    console.log("Sin cookies");
-                }
-            }
-            return state;
     }
     return  state;
 };
 
 export const Context = React.createContext();
+
+
+
+export const initialState = {
+    "gold": 0,
+    "lastConnectedTimestam": -1,
+    "goldEarnIdle": 0,
+    "businesses": [
+        {
+            "level": 1,
+            "timestamp": -1,
+            "managerHired": true
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        },
+        {
+            "level": 0,
+            "timestamp": -1,
+            "managerHired": false
+        }
+    ]
+};

@@ -2,7 +2,7 @@
 import data from './data/data.json'
 import ListBussines from './Bussines'
 import Gold from './Gold'
-import Welcome from './Welcome'
+import DataRecover from './DataRecover'
 import { Context, initialState, reducer, actionTypes } from "./Store";
 
 function App(props) {
@@ -23,9 +23,9 @@ function App(props) {
 
     return (
         <div className="container">
+            <DataRecover businessesData={businesses} />
             <ListBussines businessesData={businesses} />
             <Gold />
-            <Welcome businessesData={businesses} />
         </div>
         );
 }

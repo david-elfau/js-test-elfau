@@ -11,9 +11,7 @@ function Hook() {
     const [store, dispatch] = useReducer(reducer, initialState);
 
 
-    useEffect(() => {
-        dispatch({ type: actionTypes.LoadData });
-    },[]);
+ 
 
     return (
         <Context.Provider value={{ store, dispatch }}>
