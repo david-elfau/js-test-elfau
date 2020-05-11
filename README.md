@@ -24,9 +24,11 @@ I've created a front end app which stores the data in cookies, because I didn't 
 Technology used:
 * Node.js: To have a simple enviroment to work
 * React:I have select it as Frontend Library because: TODO
-	**React hooks: To pass and save user state data.		
+  * React hooks: To pass and save user state data.		
 * Bootstrap: I have used because it provide easy way to create components
 * Adobe XD: I have create the skeleton on XD and exported to html and css to save time, event it is not the best way yo proceed
+
+
 
 ### Data Management
 Data is split in static and user data.
