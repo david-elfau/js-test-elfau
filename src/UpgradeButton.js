@@ -12,7 +12,7 @@ function ButtonOptions(props) {
 
     let isPurchasable = store.gold >= businessData.cost[level];
 
-    const updateBussines = () => {
+    const updateBusines = () => {
         dispatch({ type: actionTypes.GoldUpdate, value: -businessData.cost[level] });
         dispatch({ type: actionTypes.LevelUpgrade, value: businessData.id });
     }
@@ -30,7 +30,7 @@ function ButtonOptions(props) {
     } else {
         if (isPurchasable) {
             button = <Button id="upgradeButton" variant="success" size="lg"
-                onClick={updateBussines}>
+                onClick={updateBusines}>
                 {UpgradeOrBuy}<br />
                 <img id="dollar-bar" src='./dollar.png' alt="$" />{businessData.cost[level]}
             </Button>;

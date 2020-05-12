@@ -25,12 +25,12 @@ function HireManagerPanel(props) {
     } else {
         if (store.businesses[businessData.id].managerHired) {
             hireManagerPanel = <div id="manager">
-                <img class="manager-icon hired" src={'./bussinessIcons/' + businessData.managerAsset + '.png'} />
+                <img class="manager-icon hired" src={'./businessIcons/' + businessData.managerAsset + '.png'} />
 
             </div>;
         } else {
             hireManagerPanel = <div onClick={hireManagerAction} id="manager">
-                <img class="manager-icon to-hire" src="./bussinessIcons/addManager.png" />
+                <img class="manager-icon to-hire" src="./businessIcons/addManager.png" />
                 <Button id="hire-manager-button" variant="success" size="lg">
                     {businessData.managerCost}
                 </Button>

@@ -9,7 +9,7 @@ import ProducerPanel from './ProducerPanel'
 const Business = (props) => {
     const businesses = props.businessesData.map((business, index) => {
         return (
-            <div key={index} id="Bussines">
+            <div key={index} id="Business">
                 <div id="title">
                    {business.name}
                 </div>
