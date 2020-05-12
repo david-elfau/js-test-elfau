@@ -68,13 +68,9 @@ function ProducerPanel(props){
             {level>0 &&             
             <div id="progressContainer">
                 <ProgressBar variant="success" animated now={progress} />
-               
-                <svg className="background_">
-                    <rect fill="transparent" stroke="rgba(112,112,112,1)" strokeWidth="1px" strokeLinejoin="miter" strokeLinecap="butt" strokeMiterlimit="4" shapeRendering="auto" id="background_" rx="0" ry="0" x="0" y="0" width="113" height="25.52">
-                    </rect>
-                </svg>
                 <div id="earning">
-                    <span>${businessData.production[level]}</span>
+                    <img id="dollar-bar" src='./dollar.png' alt="$" />
+                    <span>{businessData.production[level]}</span>
                 </div>
                 <div id="timer">                    
                     <span>

@@ -66,8 +66,6 @@
 }
 
 
-
-
 #manager {
     position: absolute;
     width: 74px;
@@ -91,19 +89,15 @@
     position: absolute;
     width: 113px;
     height: 141px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
     cursor: pointer;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 #Icon {
-    position: absolute;
-    width: 113px;
-    height: 115px;
-    left: 0px;
-    top: 0px;
-    overflow: visible;
+    width: 90%;
+    align-self: flex-start;
 }
 
 #progressContainer {
@@ -111,32 +105,19 @@
     width: 113px;
     height: 27px;
     left: 0px;
-    top: 114px;
-    overflow: visible;
-    border-color: rgba(112,112,112,1);
-}
-.background_ {
-    position: absolute;
-    overflow: visible;
-    width: 113px;
-    height: 25.52px;
-    left: 0px;
-    top: 0px;
+    bottom: 0px;
 }
 
 #earning {
     position: absolute;
-    left: 65px;
+    right: 2px;
     top: 0px;
     overflow: visible;
-    width: 45px;
+    width: 85px;
     white-space: nowrap;
-    text-align: center;
-    font-family: Segoe UI;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    color: rgba(112,112,112,1);
+    text-align: right;
+   font-weight: bold;
+    color: rgb(0, 0, 0);
 }
 
 #timer {
@@ -147,11 +128,8 @@
     width: 38px;
     white-space: nowrap;
     text-align: left;
-    font-family: Segoe UI;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    color: rgba(112,112,112,1);
+    font-weight: bold;
+    color: rgb(0, 0, 0);
 }
 
 #title {
@@ -162,7 +140,6 @@
     width: 235px;
     height: 34px;
     text-align: center;
-    font-family: Segoe UI;
     font-style: normal;
     font-weight: bold;
     font-size: 26px;

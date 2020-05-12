@@ -6,7 +6,8 @@ function Gold(props) {
     const { store, dispatch } = useContext(Context);
     return (
         <div id="gold-counter" >
-            <span> $ {store.gold} </span>
+            <img id="dollar-counter" src='./dollar.png' alt="$" />
+            <span id="amount-gold">{store.gold} </span>
         </div>
     );
 }
