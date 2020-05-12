@@ -23,17 +23,23 @@ function ButtonOptions(props) {
 
 
     var button;
-    if (isPurchasable) {
-        button = <Button id="upgradeButton" variant="success" size="lg"
-            onClick={updateBussines}>
-            {UpgradeOrBuy}<br />
-            ${businessData.cost[level]}
+    if (level >= businessData.cost.length) {
+        button = <Button id="upgradeButton" variant="secondary" size="lg">
+            MAX LEVEL!   
         </Button>;
     } else {
-        button = <Button id="upgradeButton" variant="secondary" size="lg">
-            {UpgradeOrBuy}<br />
-            ${businessData.cost[level]}
-        </Button>;
+        if (isPurchasable) {
+            button = <Button id="upgradeButton" variant="success" size="lg"
+                onClick={updateBussines}>
+                {UpgradeOrBuy}<br />
+                <img id="dollar-bar" src='./dollar.png' alt="$" />{businessData.cost[level]}
+            </Button>;
+        } else {
+            button = <Button id="upgradeButton" variant="secondary" size="lg">
+                {UpgradeOrBuy}<br />
+                <img id="dollar-bar" src='./dollar.png' alt="$" />{businessData.cost[level]}
+            </Button>;
+        }
     }
 
     return button;
