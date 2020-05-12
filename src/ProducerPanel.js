@@ -63,7 +63,7 @@ function ProducerPanel(props){
 
     return (
         <div onClick={startProduction} id="producePanel">
-            <img id="Icon" src={'./bussinessIcons/' + businessData.icon + '.png'} srcSet={'./bussinessIcons/' + businessData.icon + '.png 1x, ./bussinessIcons/' + businessData.icon + '@2x.png 2x'} />
+            <img id="Icon" src={'./bussinessIcons/' + businessData.icon + '.png'} />
 
             {level>0 &&             
             <div id="progressContainer">

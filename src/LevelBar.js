@@ -28,7 +28,7 @@ function LevelBar(props) {
             
             {bar}
             {isPurchasable &&
-                <img id="arrowIcon" src="doubleArrow.png" srcSet="doubleArrow.png 1x, doubleArrow@2x.png 2x" />
+                <img id="arrowIcon" src="doubleArrow.png" alt="^" />
             }
 
             <svg className="background_o">

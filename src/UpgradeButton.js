@@ -30,8 +30,7 @@ function ButtonOptions(props) {
             ${businessData.cost[level]}
         </Button>;
     } else {
-        button = <Button id="upgradeButton" variant="secondary" size="lg"
-            onClick={() => dispatch({ value: -10 })}>
+        button = <Button id="upgradeButton" variant="secondary" size="lg">
             {UpgradeOrBuy}<br />
             ${businessData.cost[level]}
         </Button>;
