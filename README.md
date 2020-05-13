@@ -41,6 +41,15 @@ User data includes:
 * Gold balance
 * 
 
+### Balancing details
+I have taken as reference for the balancing the AdVenture Capitalist data. 
+I took this sources:
+* AdVenture Capitalist Wiki: https://adventure-capitalist.fandom.com/wiki/AdVenture_Capitalist_Wiki
+* The Math of Idle Games: https://gameanalytics.com/blog/idle-game-mathematics.html 
+
+I change this values:
+* I have limited the max levels for business to 200 because I am importing the values througt JSON instead of show using a formula
+* I have increase the production time in the first businesses to show the progress of the progress bar
 
 #TODO: MORE DETAILS
 
