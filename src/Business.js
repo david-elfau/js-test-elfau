@@ -1,16 +1,17 @@
-import React, { useContext }  from 'react'
+import React, { useContext } from 'react'
+import { Context } from './Store';
 
 import LevelBar from './LevelBar'
 import UpgradeButton from './UpgradeButton'
 import HireManager from './HireManager'
 import ProducerPanel from './ProducerPanel'
 
-import { Context } from "./Store";
-
 
 const Business = (props) => {
 
     const { store, dispatch } = useContext(Context);
+    const { businessesData } = props;
+
     const getClassName = (index) => {
         if (store.businesses[index].level == 0)
             return "to-purchase"
@@ -18,7 +19,7 @@ const Business = (props) => {
     }
     const businesses = props.businessesData.map((business, index) => {
         return (
-            <div key={index} id="Business" className={getClassName(index)}>
+            <div key={index} id="business" className={getClassName(index)}>
                 <div id="title">
                    {business.name}
                 </div>
@@ -30,16 +31,10 @@ const Business = (props) => {
         )
     })
 
-    return businesses;
-
-}
-
-const ListBusiness = (props) => {
-    const { businessesData } = props;
     return (
-         <Business businessesData={businessesData} />
-    );
+        <div className="business-container">
+            {businesses};
+        </div>);
 }
 
-
-export default ListBusiness
+export default Business

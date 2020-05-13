@@ -22,11 +22,11 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 I've created a front end app which stores the data in cookies, because I didn't feel confortable
 
 Technology used:
-* Node.js: To have a simple enviroment to work
+* Node.js: It is a very common and simple enviroment to work. It helps creating servers and adding packages to the app.
 * React:I have select it as Frontend Library because: TODO
   * React hooks: To pass and save user state data.		
-* Bootstrap: I have used because it provide easy way to create components
-* Adobe XD: I have create the skeleton on XD and exported to html and css to save time, event it is not the best way yo proceed
+* Bootstrap: I have used because it provide easy way to create components as progress bars, and overlays.
+* Adobe XD: I have create the business skeleton on XD and exported to html and css to save time. Because I am not an expert in web design.
 
 
 
@@ -39,7 +39,7 @@ Static includes:
 User data includes:
 * State of the businesses
 * Gold balance
-* 
+* Last time the status has been change to save in local.
 
 ### Balancing details
 I have taken as reference for the balancing the AdVenture Capitalist data. 
@@ -55,7 +55,10 @@ I change this values:
 
 ## Known issues
 List of things I would do better:
-*
+* Hook reducer: I know it is a little mess. I would like the way to do it cleaner keeping the data consistency.
+* Responsive screen: It add the propper number of bussiness per row. But if the group of rows aren't allways centered.
+* Progress bar: The production progress bar doesn't reach 100% on the quick productions longer than 1s. I've lock for <1s
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context, actionTypes } from "./Store";
+import { Context, actionTypes } from './Store';
 import Button from 'react-bootstrap/Button'
-import Helpers from "./Helpers";
+import Helpers from './Helpers';
 
 function ButtonOptions(props) {
 
@@ -23,26 +23,26 @@ function ButtonOptions(props) {
     let isPurchasable = store.gold >= businessData.cost[level];
 
   
-    var UpgradeOrBuy = "Upgrade";
+    let UpgradeOrBuy = "Upgrade";
     if (level < 1) {
         UpgradeOrBuy = "Buy";
     }
 
 
-    var button;
-    if (level >= businessData.cost.length) {
-        button = <Button id="upgradeButton" variant="secondary" size="lg">
+    let button;
+    if (level >= businessData.cost.length-1) {
+        button = <Button id="upgrade-button" variant="secondary" size="lg">
             MAX LEVEL!   
         </Button>;
     } else {
         if (isPurchasable) {
-            button = <Button id="upgradeButton" variant="success" size="lg"
+            button = <Button id="upgrade-button" variant="success" size="lg"
                 onClick={updateBusines}>
                 {UpgradeOrBuy}<br />
                 <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={businessData.cost[level]} />
             </Button>;
         } else {
-            button = <Button id="upgradeButton" variant="secondary" size="lg">
+            button = <Button id="upgrade-button" variant="secondary" size="lg">
                 {UpgradeOrBuy}<br />
                 <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={businessData.cost[level]} />
             </Button>;
@@ -60,12 +60,12 @@ const UpgradeButton = (props) => {
 
     const getClassName = () => {
         if (store.businesses[businessData.id].level == 0)
-            return "buyButton to-purchase"
-        return "buyButton purchased"
+            return "buy-button to-purchase"
+        return "buy-button purchased"
     }
 
     return (
-        <div id="buyButton" className={getClassName()}>
+        <div id="buy-button" className={getClassName()}>
             <ButtonOptions businessData={ businessData}/>
            
         </div>

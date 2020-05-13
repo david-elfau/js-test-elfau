@@ -3,13 +3,11 @@ const Helpers = {
 
         time = Math.ceil(time);
 
-        // Hours, minutes and seconds
-        var hrs = ~~(time / 3600);
-        var mins = ~~((time % 3600) / 60);
-        var secs = ~~time % 60;
+        let hrs = ~~(time / 3600);
+        let mins = ~~((time % 3600) / 60);
+        let secs = ~~time % 60;
 
-        // Output like "1:01" or "4:03:59" or "123:03:59"
-        var ret = "";
+        let ret = "";
 
         if (hrs > 0) {
             ret += "" + hrs + "h ";
@@ -24,8 +22,9 @@ const Helpers = {
 
         return ret;
     },
+
     FormatedGold: function (gold, digits) {
-        var si = [
+        let si = [
             { value: 1, symbol: "" },
             { value: 1E3, symbol: "k" },
             { value: 1E6, symbol: "M" },
@@ -34,8 +33,8 @@ const Helpers = {
             { value: 1E15, symbol: "P" },
             { value: 1E18, symbol: "E" }
         ];
-        var rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
-        var i;
+        let rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+        let i;
         for (i = si.length - 1; i > 0; i--) {
             if (gold >= si[i].value) {
                 break;
@@ -43,8 +42,9 @@ const Helpers = {
         }
         return (gold / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
     },
+
     NextLevelMilestone: function (level) {
-        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200];
+        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200,300];
 
         for (let nextValue of milestones) {
             if (nextValue > level)
@@ -52,8 +52,9 @@ const Helpers = {
         }
         return milestones[milestones.len - 1];
     },
+
     PreLevelMilestone: function (level) {
-        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200];
+        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200,300];
 
         let preValue = 0;
         for (let nextValue of milestones) {

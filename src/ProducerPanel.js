@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
-import { Context, actionTypes } from "./Store";
-import Helpers from "./Helpers";
+import { Context, actionTypes } from './Store';
+import Helpers from './Helpers';
 
 function ProducerPanel(props){
     const { store, dispatch } = useContext(Context);
@@ -35,9 +35,9 @@ function ProducerPanel(props){
     }
 
     const startProduction = () => {
-        var isPurchased = store.businesses[businessData.id].level > 0;
+        let isPurchased = store.businesses[businessData.id].level > 0;
 
-        var isIdle = store.businesses[businessData.id].timestamp == -1;
+        let isIdle = store.businesses[businessData.id].timestamp == -1;
 
         if (isIdle && isPurchased) {
             dispatch({ type: actionTypes.StartProduction, value: businessData.id });
@@ -67,22 +67,22 @@ function ProducerPanel(props){
     }
 
     return (
-        <div onClick={startProduction} id="producePanel" className={getClassName()}>
-            <img id="Icon" className={getClassName()} src={'./businessIcons/' + businessData.icon + '.png'} />
+        <div onClick={startProduction} id="producer-panel" className={getClassName()}>
+            <img id="icon" className={getClassName()} src={'./businessIcons/' + businessData.icon + '.png'} />
 
             {level>0 &&             
-            <div id="progressContainer">
-                <ProgressBar variant="success" animated now={progress} />
-                <div id="earning">
-                    <img id="dollar-bar" src='./dollar.png' alt="$" />
-                    <span><FormatedGold gold={businessData.production[level]} /></span>
+                <div id="progress-container">
+                    <ProgressBar variant="success" animated now={progress} />
+                    <div id="earning">
+                        <img id="dollar-bar" src='./dollar.png' alt="$" />
+                        <span><FormatedGold gold={businessData.production[level]} /></span>
+                    </div>
+                    <div id="timer">                    
+                        <span>
+                            <FormatedTime time={remainingTime} />
+                        </span>
+                    </div>
                 </div>
-                <div id="timer">                    
-                    <span>
-                        <FormatedTime time={remainingTime} />
-                    </span>
-                </div>
-            </div>
             }
         </div>
     );

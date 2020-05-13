@@ -1,9 +1,10 @@
 import React, { useReducer, useEffect } from 'react'
 import data from './data/data.json'
-import ListBusiness from './Business'
+import Business from './Business'
 import Gold from './Gold'
+import GoldInIdle from './GoldInIdle'
 import DataRecover from './DataRecover'
-import {  initialState, reducer, actionTypes } from "./Store";
+import {  initialState, reducer, actionTypes } from './Store';
 
 function App(props) {
 
@@ -21,11 +22,10 @@ function App(props) {
 
     return (
         <div className="container">
-            <DataRecover businessesData={businesses} />
-            <div className="business-container">
-                <ListBusiness businessesData={businesses} />
-            </div>
+            <DataRecover businessesData={businesses} />            
+            <Business businessesData={businesses} />
             <Gold />
+            <GoldInIdle />
         </div>
         );
 }

@@ -20,7 +20,7 @@ export const reducer = (state, action) => {
 
     const cookies = new Cookies();
 
-    var newBusinesses;
+    let newBusinesses;
     switch (action.type) {
         case actionTypes.GoldUpdate:
             cookies.set('data', JSON.stringify({

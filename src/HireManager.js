@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context, actionTypes } from "./Store";
+import { Context, actionTypes } from './Store';
 import Button from 'react-bootstrap/Button';
-import Helpers from "./Helpers";
+import Helpers from './Helpers';
 
 function HireManagerPanel(props) {
     const { store, dispatch } = useContext(Context);
@@ -26,6 +26,8 @@ function HireManagerPanel(props) {
         }
     }
 
+    let variantButton = store.gold >= businessData.managerCost ? "success" : "secondary";
+
     let hireManagerPanel;
     if (store.businesses[businessData.id].level < 1) {
         hireManagerPanel = <div id="manager" />;
@@ -38,7 +40,7 @@ function HireManagerPanel(props) {
         } else {
             hireManagerPanel = <div onClick={hireManagerAction} id="manager">
                 <img className="manager-icon to-hire" src="./businessIcons/addManager.png" />
-                <Button id="hire-manager-button" variant="success" size="lg">
+                <Button id="hire-manager-button" variant={variantButton} size="lg">
                     {<FormatedGold gold={businessData.managerCost} />}
                 </Button>
             </div>;
