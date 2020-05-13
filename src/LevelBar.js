@@ -30,7 +30,7 @@ function LevelBar(props) {
         <div id="level-bar" hidden={level<1} >            
             {bar}
             {isPurchasable &&
-                <img id="arrow-icon" src="doubleArrow.png" alt="^" />
+                <img id="arrow-icon" src="arrow_green.png" alt="^" />
             }
 
             <div id="level-text">
