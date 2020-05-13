@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import { Context, actionTypes } from "./Store";
+import Helpers from "./Helpers";
 
 function ProducerPanel(props){
     const { store, dispatch } = useContext(Context);
@@ -41,25 +42,14 @@ function ProducerPanel(props){
 
     const FormatedTime = (timeData) => {
         const { time } = timeData;   
-        // Hours, minutes and seconds
-        var hrs = ~~(time / 3600);
-        var mins = ~~((time % 3600) / 60);
-        var secs = ~~time % 60;
 
-        // Output like "1:01" or "4:03:59" or "123:03:59"
-        var ret = "";
-
-        if (hrs > 0) {
-            ret += "" + hrs + "h " ;
-        }
-        if (mins > 0) {
-            ret += "" + mins + "m ";
-        }
-        ret += "" + secs+ "s" ;
-        return ret;
+        return Helpers.FormatedTime(time);
     };
-       
 
+    const FormatedGold = (goldData) => {
+        const { gold } = goldData;
+        return Helpers.FormatedGold(gold,0);
+    };
 
     return (
         <div onClick={startProduction} id="producePanel">
@@ -70,7 +60,7 @@ function ProducerPanel(props){
                 <ProgressBar variant="success" animated now={progress} />
                 <div id="earning">
                     <img id="dollar-bar" src='./dollar.png' alt="$" />
-                    <span>{businessData.production[level]}</span>
+                    <span><FormatedGold gold={businessData.production[level]} /></span>
                 </div>
                 <div id="timer">                    
                     <span>

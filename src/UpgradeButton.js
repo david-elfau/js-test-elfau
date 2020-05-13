@@ -1,9 +1,14 @@
 import React, { useContext } from 'react'
 import { Context, actionTypes } from "./Store";
-
 import Button from 'react-bootstrap/Button'
+import Helpers from "./Helpers";
 
 function ButtonOptions(props) {
+    const FormatedGold = (goldData) => {
+        const { gold } = goldData;
+        return Helpers.FormatedGold(gold, 3);
+    };
+
 
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
@@ -32,15 +37,17 @@ function ButtonOptions(props) {
             button = <Button id="upgradeButton" variant="success" size="lg"
                 onClick={updateBusines}>
                 {UpgradeOrBuy}<br />
-                <img id="dollar-bar" src='./dollar.png' alt="$" />{businessData.cost[level]}
+                <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={businessData.cost[level]} />
             </Button>;
         } else {
             button = <Button id="upgradeButton" variant="secondary" size="lg">
                 {UpgradeOrBuy}<br />
-                <img id="dollar-bar" src='./dollar.png' alt="$" />{businessData.cost[level]}
+                <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={businessData.cost[level]} />
             </Button>;
         }
     }
+
+
 
     return button;
 }

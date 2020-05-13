@@ -6,6 +6,7 @@ import Alert from 'react-bootstrap/Alert'
 
 import Cookies from 'universal-cookie';
 import Button from 'react-bootstrap/Button';
+import Helpers from "./Helpers";
 
 function DataRecover(props) {
     //const businesses = data.businesses;
@@ -79,14 +80,17 @@ function DataRecover(props) {
 
     }, []);
 
+    const FormatedGold = (goldData) => {
+        const { gold } = goldData;
+        return Helpers.FormatedGold(gold, 3);
+    };
 
     return (
         <>
             <Alert id="AlertWelcomeBack" show={show} variant="success">
                 <Alert.Heading>Welcome Back!</Alert.Heading>
                 <p>
-                    You were offline for {store.timeIdle} time.<br />
-                    You earned ${store.goldEarnIdle}. <br />
+                    You earned  <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={ store.goldEarnIdle } />. <br />
                 </p>
                 <hr />
                 <div className="d-flex justify-content-end">

@@ -173,7 +173,7 @@ export const initialState = {
         {
             "level": 1,
             "timestamp": -1,
-            "managerHired": true
+            "managerHired": false
         },
         {
             "level": 0,

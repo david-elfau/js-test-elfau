@@ -1,10 +1,17 @@
 import React, { useContext } from 'react'
 import { Context, actionTypes } from "./Store";
 import Button from 'react-bootstrap/Button';
+import Helpers from "./Helpers";
 
 function HireManagerPanel(props) {
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
+
+    const FormatedGold = (goldData) => {
+        const { gold } = goldData;
+        return Helpers.FormatedGold(gold, 0);
+    };
+
 
     const hireManagerAction = () => {
         if (store.gold >= businessData.managerCost) {
@@ -32,7 +39,7 @@ function HireManagerPanel(props) {
             hireManagerPanel = <div onClick={hireManagerAction} id="manager">
                 <img class="manager-icon to-hire" src="./businessIcons/addManager.png" />
                 <Button id="hire-manager-button" variant="success" size="lg">
-                    {businessData.managerCost}
+                    {<FormatedGold gold={businessData.managerCost} />}
                 </Button>
             </div>;
         }
