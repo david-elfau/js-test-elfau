@@ -60,12 +60,14 @@ function ProducerPanel(props){
         if (store.businesses[businessData.id].timestamp > 0)
             return "producing"
         if (store.businesses[businessData.id].level == 0)
-            return " to-purchase"
+            return "to-purchase"
+        if (store.businesses[businessData.id].level > 0 && store.businesses[businessData.id].timestamp == -1 )
+            return "idle"
         return ""
     }
 
     return (
-        <div onClick={startProduction} id="producePanel">
+        <div onClick={startProduction} id="producePanel" className={getClassName()}>
             <img id="Icon" className={getClassName()} src={'./businessIcons/' + businessData.icon + '.png'} />
 
             {level>0 &&             

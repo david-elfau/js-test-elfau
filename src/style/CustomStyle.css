@@ -108,19 +108,19 @@ table{
     border-radius: 15px;
     margin: 10px 5px;
 }
-    #Business.to-purchase {
-        background-color: #EEE;
-    }
+#Business.to-purchase {
+    background-color: #EEE;
+}
 
 
-    #levelBar {
-        position: absolute;
-        width: 154px;
-        height: 26px;
-        left: 139px;
-        top: 53px;
-        overflow: visible;
-    }
+#levelBar {
+    position: absolute;
+    width: 154px;
+    height: 26px;
+    left: 139px;
+    top: 53px;
+    overflow: visible;
+}
 
 #arrowIcon {
     position: absolute;
@@ -182,8 +182,25 @@ table{
     margin: auto;
     display: flex;
     justify-content: center;
+    border-radius: 15px;
 }
+    #producePanel.idle {
+        animation: pulse 2.5s infinite;
+        box-shadow: 0 0 0 rgba(204,169,44, 0);
+    }
+@keyframes pulse {
+    100% {
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0.6);
+    }
 
+    70% {
+        box-shadow: 0 0 10px 10px rgba(204,169,44, 0);
+    }
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+}
 
 #Icon {
     width: 90%;
@@ -200,13 +217,13 @@ table{
 }
 
 @keyframes shake {
-    0% {        transform: scale(1,1) translateY(0);}
-    8% {        transform: scale(1.1,.9) translateY(0);}
-    23% {        transform: scale(.9,1.1) translateY(-20px);}
-    39% {        transform: scale(1.05,.95) translateY(0);}
-    45% {        transform: scale(1,1) translateY(-7px);}
-    50% {        transform: scale(1,1) translateY(0);}
-    100% {        transform: scale(1,1) translateY(0);}
+    0%  {transform: scale(1,1) translateY(0);}
+    8%  {transform: scale(1.1,.9) translateY(0);}
+    23% {transform: scale(.9,1.1) translateY(-20px);}
+    39% {transform: scale(1.05,.95) translateY(0);}
+    45% {transform: scale(1,1) translateY(-7px);}
+    50% {transform: scale(1,1) translateY(0);}
+    100%{transform: scale(1,1) translateY(0);}
 }
 
 #progressContainer {
