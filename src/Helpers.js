@@ -17,7 +17,10 @@ const Helpers = {
         if (mins > 0) {
             ret += "" + mins + "m ";
         }
-        ret += "" + secs + "s";
+            
+        if (hrs < 1) {
+            ret += "" + secs + "s";
+        }
 
         return ret;
     },

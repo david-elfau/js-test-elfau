@@ -21,6 +21,10 @@ function ProducerPanel(props){
         remainingTime = productionTime;
     } 
 
+    if (productionTime < 1 && store.businesses[businessData.id].managerHired) {
+        progress = 100;
+    }
+
     function productionEnded(){
         dispatch({ type: actionTypes.EndProduction, value: businessData.id });
         dispatch({ type: actionTypes.GoldUpdate, value: businessData.production[store.businesses[businessData.id].level] });
@@ -51,9 +55,18 @@ function ProducerPanel(props){
         return Helpers.FormatedGold(gold,0);
     };
 
+
+    const getClassName = () => {
+        if (store.businesses[businessData.id].timestamp > 0)
+            return "producing"
+        if (store.businesses[businessData.id].level == 0)
+            return " to-purchase"
+        return ""
+    }
+
     return (
         <div onClick={startProduction} id="producePanel">
-            <img id="Icon" src={'./businessIcons/' + businessData.icon + '.png'} />
+            <img id="Icon" className={getClassName()} src={'./businessIcons/' + businessData.icon + '.png'} />
 
             {level>0 &&             
             <div id="progressContainer">

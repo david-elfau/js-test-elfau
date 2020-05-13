@@ -4,23 +4,25 @@ import Button from 'react-bootstrap/Button'
 import Helpers from "./Helpers";
 
 function ButtonOptions(props) {
-    const FormatedGold = (goldData) => {
-        const { gold } = goldData;
-        return Helpers.FormatedGold(gold, 3);
-    };
 
 
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
 
-    let level = store.businesses[businessData.id].level;
-
-    let isPurchasable = store.gold >= businessData.cost[level];
+    const FormatedGold = (goldData) => {
+        const { gold } = goldData;
+        return Helpers.FormatedGold(gold, 3);
+    };
 
     const updateBusines = () => {
         dispatch({ type: actionTypes.GoldUpdate, value: -businessData.cost[level] });
         dispatch({ type: actionTypes.LevelUpgrade, value: businessData.id });
     }
+
+    let level = store.businesses[businessData.id].level;
+    let isPurchasable = store.gold >= businessData.cost[level];
+
+  
     var UpgradeOrBuy = "Upgrade";
     if (level < 1) {
         UpgradeOrBuy = "Buy";
@@ -54,9 +56,16 @@ function ButtonOptions(props) {
 
 const UpgradeButton = (props) => {
     const { businessData } = props;
+    const { store, dispatch } = useContext(Context);
+
+    const getClassName = () => {
+        if (store.businesses[businessData.id].level == 0)
+            return "buyButton to-purchase"
+        return "buyButton purchased"
+    }
 
     return (
-        <div id="buyButton" className="buyButton">
+        <div id="buyButton" className={getClassName()}>
             <ButtonOptions businessData={ businessData}/>
            
         </div>

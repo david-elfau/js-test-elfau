@@ -6,15 +6,18 @@ import Alert from 'react-bootstrap/Alert'
 
 import Cookies from 'universal-cookie';
 import Button from 'react-bootstrap/Button';
+import Overlay from 'react-bootstrap/Overlay';
+
 import Helpers from "./Helpers";
 
 function DataRecover(props) {
     //const businesses = data.businesses;
     const { store, dispatch } = useContext(Context);
 
-    var show = true;
+    var show = store.goldEarnIdle > 0;
     function hidePanel() {
-        var x = document.getElementById("AlertWelcomeBack");
+        console.log("Cerrar panel");
+        var x = document.getElementById("idle-gold-overlay");
         x.style.display = "none";
     };
 
@@ -85,20 +88,36 @@ function DataRecover(props) {
         return Helpers.FormatedGold(gold, 3);
     };
 
+
+    const target = document.getElementById("gold-counter");
+
     return (
         <>
-            <Alert id="AlertWelcomeBack" show={show} variant="success">
-                <Alert.Heading>Welcome Back!</Alert.Heading>
-                <p>
-                    You earned  <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={ store.goldEarnIdle } />. <br />
-                </p>
-                <hr />
-                <div className="d-flex justify-content-end">
-                    <Button onClick={hidePanel} variant="outline-success">
-                        Claim!
-          </Button>
-                </div>
-            </Alert>
+            <Overlay target={target} show={show} placement="bottom" onclick={hidePanel}>
+                {({
+                    placement,
+                    scheduleUpdate,
+                    arrowProps,
+                    outOfBoundaries,
+                    show: _show,
+                    ...props
+                }) => (
+                        <div id="idle-gold-overlay"
+                            {...props}
+                            style={{
+                                ...props.style,
+                            }}
+                        >
+                            <h5>Welcome Back!</h5>
+                            <p>
+                                You earned  <img id="dollar-bar" src='./dollar.png' alt="$" /><FormatedGold gold={store.goldEarnIdle} />. <br />
+                            </p>
+                            <Button id="claim-idle" onClick={hidePanel} variant="success">
+                                Claim!
+                            </Button>
+                        </div>
+                    )}
+            </Overlay>
 
         </>
     );

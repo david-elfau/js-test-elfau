@@ -14,23 +14,6 @@
 }
 
 
-#gold-counter {
-    background: #45a1d5;
-    width: 200px;
-    height: 50px;
-    position: fixed;
-    top: 0;
-    border-radius: 0 0 25px 0;
-    background: #21252947;
-    border: 4px solid #d39e00;
-    border-top-style: none;
-    border-left-style: none;
-    left: 0;
-    display: flex;
-    align-items: center;
-}
-
-
 table{
     border-spacing:10px 5px;
 }
@@ -38,7 +21,7 @@ table{
 .business-container {
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     grid-template-rows: repeat(10, 150px);
 }
 
@@ -46,6 +29,23 @@ table{
     width: 20px;
     height: 20px;
     margin-bottom:4px;
+}
+
+
+#gold-counter {
+    background: #212529b3;
+    width: 250px;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    border-radius: 0 0 25px 25px;
+    border: 4px solid #d39e00;
+    border-top-style: none;
+    left: 0;
+    display: flex;
+    align-items: center;
+    left: 50%;
+    margin-left: -125px;
 }
 
 #dollar-counter {
@@ -58,7 +58,7 @@ table{
     display: inline-block;
     text-align: right;
     font-weight: bold;
-    color: rgb(0, 0, 0);
+    color: white;
     padding-left: 2px;
     font-size: 2rem;
 }
@@ -75,7 +75,7 @@ table{
     position: absolute;
     width: 74px;
     height: 90px;
-    left: 278px;
+    right: 0px;
     bottom: 0px;
     overflow: visible;
     cursor: pointer;
@@ -100,7 +100,7 @@ table{
 
 #Business {
     position: relative;
-    width: 355px;
+    width: 375px;
     height: 141px;
     overflow: visible;
     background-color: #CCC;
@@ -108,16 +108,19 @@ table{
     border-radius: 15px;
     margin: 10px 5px;
 }
+    #Business.to-purchase {
+        background-color: #EEE;
+    }
 
 
-#levelBar {
-    position: absolute;
-    width: 154px;
-    height: 26px;
-    left: 120px;
-    top: 53px;
-    overflow: visible;
-}
+    #levelBar {
+        position: absolute;
+        width: 154px;
+        height: 26px;
+        left: 139px;
+        top: 53px;
+        overflow: visible;
+    }
 
 #arrowIcon {
     position: absolute;
@@ -154,19 +157,26 @@ table{
 
 #buyButton {
     position: absolute;
-    width: 154px;
-    height: 59px;
-    left: 120px;
-    top: 79px;
+    left: 139px;
     overflow: visible;
     cursor: pointer;
 }
 
+#buyButton.to-purchase {
+    width: 230px;
+    height: 85px;
+    bottom: 5px;
+}
 
+#buyButton.purchased {
+    width: 154px;
+    height: 59px;
+    top: 79px;
+}
 
 #producePanel {
     position: absolute;
-    width: 113px;
+    width: 130px;
     height: 141px;
     cursor: pointer;
     margin: auto;
@@ -174,14 +184,34 @@ table{
     justify-content: center;
 }
 
+
 #Icon {
     width: 90%;
     align-self: flex-start;
+    animation: shake 2.82s;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+#Icon.producing {
+    animation-iteration-count: infinite;
+}
+#Icon.to-purchase {
+    align-self: center;
+    filter: grayscale(100%);
+}
+
+@keyframes shake {
+    0% {        transform: scale(1,1) translateY(0);}
+    8% {        transform: scale(1.1,.9) translateY(0);}
+    23% {        transform: scale(.9,1.1) translateY(-20px);}
+    39% {        transform: scale(1.05,.95) translateY(0);}
+    45% {        transform: scale(1,1) translateY(-7px);}
+    50% {        transform: scale(1,1) translateY(0);}
+    100% {        transform: scale(1,1) translateY(0);}
 }
 
 #progressContainer {
     position: absolute;
-    width: 113px;
+    width: 100%;
     height: 27px;
     left: 0px;
     bottom: 0px;
@@ -213,16 +243,35 @@ table{
 
 #title {
     position: absolute;
-    left: 121px;
+    left: 124px;
     top: 9px;
     overflow: hidden;
-    width: 235px;
+    width: 250px;
     height: 34px;
     text-align: center;
-    font-style: normal;
     font-weight: bold;
-    font-size: 26px;
-    color: rgba(112,112,112,1);
+    font-size: 25px;
+    color: #555555;
+}
+
+.container {
+    max-width: 100%;
+}
+
+#idle-gold-overlay {
+    background: #212529b3;
+    padding: 2px 10px;
+    color: white;
+    position: absolute;
+    border: 4px solid #d39e00;
+    border-style: solid;
+    border-top-style: none;
+    border-radius: 0px 0px 25px 25px;
+    display: inline-grid;
+}
+
+#claim-idle {
+    margin: 0px 3px 10px 3px;
 }
 
 
