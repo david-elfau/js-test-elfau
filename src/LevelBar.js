@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Context } from "./Store";
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import Helpers from "./Helpers";
 
 
 
@@ -10,9 +11,10 @@ function LevelBar(props) {
     const { businessData } = props;
     let level = store.businesses[businessData.id].level;
 
-    let milestones = [5,10,15,20,30,40,50,100,200]
-    const maxLevel = 15;
-    const progress = 100 * level / maxLevel;
+
+    const maxLevel = Helpers.NextLevelMilestone(level);
+    const preLevel = Helpers.PreLevelMilestone(level);
+    const progress = 100 * (level - preLevel) / (maxLevel - preLevel);
 
     const isPurchasable = store.gold >= businessData.cost[level];
 

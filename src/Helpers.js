@@ -40,8 +40,25 @@ const Helpers = {
         }
         return (gold / si[i].value).toFixed(digits).replace(rx, "$1") + si[i].symbol;
     },
-    helper3: function (param1, param2) {
+    NextLevelMilestone: function (level) {
+        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200];
 
+        for (let nextValue of milestones) {
+            if (nextValue > level)
+                return nextValue; 
+        }
+        return milestones[milestones.len - 1];
+    },
+    PreLevelMilestone: function (level) {
+        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200];
+
+        let preValue = 0;
+        for (let nextValue of milestones) {
+            if (nextValue > level)
+                return preValue;
+            preValue = nextValue;
+        }
+        return preValue;
     }
 
 }
