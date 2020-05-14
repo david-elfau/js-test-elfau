@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
-import { Context, actionTypes } from './Store';
+import { Context, actionTypes } from './helpers/Store';
 
 import Button from 'react-bootstrap/Button';
 import Overlay from 'react-bootstrap/Overlay';
 
-import Helpers from './Helpers';
+import Helpers from './helpers/Helpers';
 
 function GoldInIdle(props) {
     const { store, dispatch } = useContext(Context);

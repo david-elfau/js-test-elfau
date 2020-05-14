@@ -1,10 +1,10 @@
 import React, { useReducer, useEffect } from 'react'
-import data from './data/data.json'
-import Business from './BusinessParts/Business'
+import Business from './businessParts/Business'
 import Gold from './Gold'
 import GoldInIdle from './GoldInIdle'
-import DataRecover from './DataRecover'
-import {  initialState, reducer, actionTypes } from './Store';
+import DataRecover from './helpers/DataRecover'
+import { initialState, reducer, actionTypes } from './helpers/Store';
+import data from './data/data.json'
 
 function App(props) {
 

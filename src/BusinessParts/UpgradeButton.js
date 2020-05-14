@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context, actionTypes } from '../Store';
+import { Context, actionTypes } from '../helpers/Store';
 import Button from 'react-bootstrap/Button'
-import Helpers from '../Helpers';
+import Helpers from '../helpers/Helpers';
 
 function ButtonOptions(props) {
 

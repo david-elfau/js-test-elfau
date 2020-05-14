@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { Context } from './Store';
-import Helpers from './Helpers';
+import { Context } from './helpers/Store';
+import Helpers from './helpers/Helpers';
 
 
 function Gold(props) {

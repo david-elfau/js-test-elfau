@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import ProgressBar from 'react-bootstrap/ProgressBar'
-import { Context, actionTypes } from '../Store';
-import Helpers from '../Helpers';
+import { Context, actionTypes } from '../helpers/Store';
+import Helpers from '../helpers/Helpers';
 
 function ProducerPanel(props){
     const { store, dispatch } = useContext(Context);

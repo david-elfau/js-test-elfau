@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context } from '../Store';
+import { Context } from '../helpers/Store';
 import ProgressBar from 'react-bootstrap/ProgressBar';
-import Helpers from '../Helpers';
+import Helpers from '../helpers/Helpers';
 
 
 function LevelBar(props) {

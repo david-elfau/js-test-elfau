@@ -1,5 +1,6 @@
 import React from "react";
 
+import data from '../data/user-data.json'
 import Cookies from 'universal-cookie';
 
 export const actionTypes = {
@@ -15,9 +16,8 @@ export const actionTypes = {
 }
 
 
-
 export const reducer = (state, action) => {
-
+    console.log(initialState);
     const cookies = new Cookies();
 
     let newBusinesses;
@@ -165,60 +165,4 @@ export const Context = React.createContext();
 
 
 
-export const initialState = {
-    "gold": 0,
-    "lastConnectedTimestam": -1,
-    "goldEarnIdle": 0,
-    "businesses": [
-        {
-            "level": 1,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        },
-        {
-            "level": 0,
-            "timestamp": -1,
-            "managerHired": false
-        }
-    ]
-};
+export const initialState = data.userData;
