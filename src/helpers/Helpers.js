@@ -17,7 +17,7 @@ const Helpers = {
         if (mins > 0) {
             ret += "" + mins + "m ";
         }
-            
+
         if (hrs < 1) {
             ret += "" + secs + "s";
         }
@@ -46,17 +46,17 @@ const Helpers = {
     },
 
     NextLevelMilestone: function (level) {
-        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200,300];
+        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200, 300];
 
         for (let nextValue of milestones) {
             if (nextValue > level)
-                return nextValue; 
+                return nextValue;
         }
         return milestones[milestones.len - 1];
     },
 
     PreLevelMilestone: function (level) {
-        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200,300];
+        let milestones = [5, 10, 15, 20, 30, 40, 50, 100, 200, 300];
 
         let preValue = 0;
         for (let nextValue of milestones) {

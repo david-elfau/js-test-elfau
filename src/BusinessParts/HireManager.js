@@ -54,7 +54,7 @@ const HireManager = (props) => {
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
     return (
-        <HireManagerPanel businessData={businessData} />       
+        <HireManagerPanel businessData={businessData} />
     );
 }
 

@@ -30,7 +30,7 @@ function ButtonOptions(props) {
     }
 
 
-  
+
     let UpgradeOrBuy = "Upgrade";
     if (level < 1) {
         UpgradeOrBuy = "Buy";
@@ -38,9 +38,9 @@ function ButtonOptions(props) {
 
 
     let button;
-    if (level >= businessData.cost.length-1) {
+    if (level >= businessData.cost.length - 1) {
         button = <Button id="upgrade-button" variant="secondary" size="lg">
-            MAX LEVEL!   
+            MAX LEVEL!
         </Button>;
     } else {
         if (isPurchasable) {
@@ -74,8 +74,8 @@ const UpgradeButton = (props) => {
 
     return (
         <div id="buy-button" className={getClassName()}>
-            <ButtonOptions businessData={ businessData}/>
-           
+            <ButtonOptions businessData={businessData} />
+
         </div>
     );
 

@@ -11,9 +11,9 @@ function Hook() {
 
     return (
         <Context.Provider value={{ store, dispatch }}>
-                <App />
+            <App />
         </Context.Provider>
-  );
+    );
 }
 
 ReactDOM.render(<Hook />, document.getElementById('root'))

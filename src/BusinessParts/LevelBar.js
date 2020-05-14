@@ -17,7 +17,7 @@ function LevelBar(props) {
 
     const isPurchasable = store.gold >= businessData.cost[level];
 
- 
+
     let bar;
     if (isPurchasable) {
         bar = <ProgressBar animated variant="warning" now={progress} />;
@@ -27,7 +27,7 @@ function LevelBar(props) {
 
 
     return (
-        <div id="level-bar" hidden={level<1} >            
+        <div id="level-bar" hidden={level < 1} >
             {bar}
             {isPurchasable &&
                 <img id="arrow-icon" src="arrow_green.png" alt="^" />
@@ -38,7 +38,7 @@ function LevelBar(props) {
             </div>
         </div>
     );
-   
+
 }
 
 export default LevelBar

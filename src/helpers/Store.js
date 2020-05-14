@@ -15,7 +15,6 @@ export const actionTypes = {
     SetBusinessState: "SetBusinessState"
 }
 
-
 export const reducer = (state, action) => {
     const cookies = new Cookies();
 
@@ -27,7 +26,7 @@ export const reducer = (state, action) => {
                 businesses: state.businesses,
                 lastConnectedTimestam: Date.now(),
                 goldEarnIdle: state.goldEarnIdle
-            }), { path: '/', maxAge: 31536000});
+            }), { path: '/', maxAge: 31536000 });
 
             return {
                 gold: state.gold + action.value,
@@ -73,7 +72,7 @@ export const reducer = (state, action) => {
                 goldEarnIdle: state.goldEarnIdle
             };
 
-        case actionTypes.StartProduction:         
+        case actionTypes.StartProduction:
             newBusinesses = state.businesses;
 
             if (action.aux != null) {
@@ -135,7 +134,7 @@ export const reducer = (state, action) => {
                 businesses: state.businesses,
                 lastConnectedTimestam: Date.now(),
                 goldEarnIdle: state.goldEarnIdle
-            }; 
+            };
 
         case actionTypes.SetBusinessState:
             newBusinesses = state.businesses;
@@ -157,7 +156,7 @@ export const reducer = (state, action) => {
             };
 
     }
-    return  state;
+    return state;
 };
 
 export const Context = React.createContext();

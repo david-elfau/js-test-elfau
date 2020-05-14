@@ -33,7 +33,7 @@ function DataRecover(props) {
 
                 //Check pending production, claim and restart
                 if (cookieInfo.businesses[index].timestamp != -1) {
-                    if (remainingTime <= 0 ) {
+                    if (remainingTime <= 0) {
                         if (managerHired) {
                             let numFullProductions = parseInt(-remainingTime / productionTime);
                             goldEarned = business.production[level] * numFullProductions;
@@ -54,10 +54,10 @@ function DataRecover(props) {
                         dispatch({ type: actionTypes.AddGoldEarnIdle, value: goldEarned });
 
                     } else {
-                        dispatch({ type: actionTypes.StartProduction, value: business.id, aux: cookieInfo.businesses[index].timestamp  });
+                        dispatch({ type: actionTypes.StartProduction, value: business.id, aux: cookieInfo.businesses[index].timestamp });
                     }
                 }
-            })  
+            })
 
         } else {
             console.log("Sin cookies");

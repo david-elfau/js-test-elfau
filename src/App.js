@@ -18,16 +18,16 @@ function App(props) {
         }, 100);
 
         return () => clearInterval(intervalId);
-    },[]);
+    }, []);
 
     return (
         <div className="container">
-            <DataRecover businessesData={businesses} />            
+            <DataRecover businessesData={businesses} />
             <Business businessesData={businesses} />
             <Gold />
             <GoldInIdle />
         </div>
-        );
+    );
 }
 
 export default App
