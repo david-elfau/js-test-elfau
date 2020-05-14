@@ -33,8 +33,8 @@ const Business = (props) => {
 
     return (
         <div className="business-container">
-            {businesses};
-        </div>);
+            {businesses}
+        </div>)
 }
 
 export default Business

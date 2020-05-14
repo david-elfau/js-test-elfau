@@ -17,7 +17,6 @@ export const actionTypes = {
 
 
 export const reducer = (state, action) => {
-    console.log(initialState);
     const cookies = new Cookies();
 
     let newBusinesses;

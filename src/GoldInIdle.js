@@ -39,7 +39,7 @@ function GoldInIdle(props) {
                             <h5>Welcome Back!</h5>
                             <p>
                                 You earned  <img id="dollar-bar" src='./dollar.png' alt="$" />
-                                <FormatedGold gold={store.goldEarnIdle} />. <br />
+                                <FormatedGold gold={store.goldEarnIdle} />.
                             </p>
                             <Button id="claim-idle" onClick={hidePanel} variant="success">
                                 Claim!
