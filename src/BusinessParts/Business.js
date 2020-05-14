@@ -4,7 +4,7 @@ import { Context } from '../helpers/Store';
 import LevelBar from './LevelBar'
 import UpgradeButton from './UpgradeButton'
 import HireManager from './HireManager'
-import ProducerPanel from './ProducerPanel'
+import ProducerPanel from './ProducerPanel' 
 
 
 const Business = (props) => {
