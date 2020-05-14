@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import { Context, actionTypes } from './Store';
+import { Context, actionTypes } from '../Store';
 import Button from 'react-bootstrap/Button';
-import Helpers from './Helpers';
+import Helpers from '../Helpers';
 
 function HireManagerPanel(props) {
     const { store, dispatch } = useContext(Context);

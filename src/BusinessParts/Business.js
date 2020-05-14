@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Context } from './Store';
+import { Context } from '../Store';
 
 import LevelBar from './LevelBar'
 import UpgradeButton from './UpgradeButton'

@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from 'react'
 import data from './data/data.json'
-import Business from './Business'
+import Business from './BusinessParts/Business'
 import Gold from './Gold'
 import GoldInIdle from './GoldInIdle'
 import DataRecover from './DataRecover'
