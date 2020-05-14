@@ -1,3 +1,5 @@
+import Toast from 'light-toast';
+
 const Helpers = {
     FormatedTime: function (time) {
 
@@ -63,8 +65,15 @@ const Helpers = {
             preValue = nextValue;
         }
         return preValue;
-    }
+    },
 
+    SuccessNotification: function (message) {
+        Toast.success(message, 500);
+    },
+
+    NotEnoughMoneyNotification: function () {
+        Toast.fail('Not enough money! :(', 500);
+    }
 }
 
 export default Helpers;

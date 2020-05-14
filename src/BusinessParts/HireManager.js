@@ -21,8 +21,9 @@ function HireManagerPanel(props) {
             if (store.businesses[businessData.id].timestamp == -1) {
                 dispatch({ type: actionTypes.StartProduction, value: businessData.id });
             }
+            Helpers.SuccessNotification("Manager Hired!");
         } else {
-            console.log("NOT ENOUGH MONEY");
+            Helpers.NotEnoughMoneyNotification();
         }
     }
 
@@ -52,7 +53,6 @@ function HireManagerPanel(props) {
 const HireManager = (props) => {
     const { store, dispatch } = useContext(Context);
     const { businessData } = props;
-
     return (
         <HireManagerPanel businessData={businessData} />       
     );
