@@ -33,15 +33,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ## Technical Details
-I have created a front-end app which stores the data in cookies, because I did not feel comfortable creating a server and a client.
+I have created a front-end app which stores the data in cookies. I choose this option because without server I save time in the development iterations and the features required are not affected. It allows me to create a demo how represent better my strengths. 
 
 ### Technology used:
-* Node.js: It is a quite common and simple environment to work. It helps creating servers and adding packages to the app.
 * React: I have selected it as Frontend Library because is one the standards of the industry and it fits with I needed. 
-  * React hooks: To pass and save user state data.
-* Bootstrap: It provides me a easy way to create components as progress bars and overlays.
-* Firebase: I have used firebase to host the demo, because is easy to config and is free for this usage. 
-* Adobe XD: I have created the business skeleton on XD and exported to html and CSS to save time. Because I am not an expert in web design.
+  * React hooks: I have used hooks to manage and save the player status.
+* Node.js: Simple and flexible environment to work with JS. It includes tools to create projects and prepare build very useful.
+* Bootstrap: UI Library that provides me a easy way to create components as progress bars and overlays.
+* Firebase: I have used firebase to host the demo, because the deploy system for node + read allowed me quick iterations. 
 
 ### Structure
 The game has these main parts:
@@ -72,7 +71,7 @@ I took these sources:
 * AdVenture Capitalist Wiki: https://adventure-capitalist.fandom.com/wiki/AdVenture_Capitalist_Wiki
 * The Math of Idle Games: https://gameanalytics.com/blog/idle-game-mathematics.html 
 
-I change this values:
+I change these values:
 * I have limited the max levels for business to 200 because I am importing the values through JSON instead of using a formula.
 * I have increased the production time in the first businesses to show the progress of the progress bar.
 
