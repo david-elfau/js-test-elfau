@@ -23,7 +23,7 @@ table {
     grid-gap: 5px;
     grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
-    margin-top: 40px;
+    margin-top: 52px;
 }
 
 #dollar-bar {
