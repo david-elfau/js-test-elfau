@@ -4,7 +4,8 @@ Demo website:
 https://david-elfau-test.web.app/
 
 ## Install instructions
-###Requirements:
+
+### Requirements:
 * Node.js
 * npm
 * git (optional)
@@ -21,7 +22,7 @@ $ npm start
 ### Steps using document attached:
 1. Download attached file.
 2. Unzip on the desired folder.
-3. Open a console and navigate to the unzziped folder
+3. Open a console and navigate to the unzipped folder
 4. Execute:
 ```
 $ npm install ./
@@ -43,6 +44,16 @@ I have created a front-end app which stores the data in cookies, because I did n
 * Adobe XD: I have created the business skeleton on XD and exported to html and CSS to save time. Because I am not an expert in web design.
 
 ### Structure
+The game has these main parts:
+* Store: Manager of the game, it is a hook reducer to listen all the actions of the business and execute.
+  * It is a big hook reducer to keep de data consistency in all the game.
+  * It saves the data in cookie in every player interaction.
+* Business: Manager the interactions and UI of the businesses.
+  * It is split in the different components: Upgrade, hire manager and production.
+  * In every interaction updates the store.
+* DataRecover: When the game is loaded, loads the cookie, initialize the Store and shows the gold earn during the idle
+* Gold: It is a panel that updates with the store.
+
 
 
 ### Data Management
@@ -65,7 +76,6 @@ I change this values:
 * I have limited the max levels for business to 200 because I am importing the values through JSON instead of using a formula.
 * I have increased the production time in the first businesses to show the progress of the progress bar.
 
-#TODO: MORE DETAILS
 
 ## Known issues
 List of things I would do better:
