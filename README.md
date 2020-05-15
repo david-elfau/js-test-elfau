@@ -58,12 +58,19 @@ The game has these main parts:
 ### Data Management
 Data is split in static and user data.
 Static includes:
-* Info about businesses
+* Info about businesses as:
+  * Cost per level
+  * Revenue per level
+  * Production time per level
 
 User data includes:
 * State of the businesses
 * Gold balance
 * Last time the status has been changed to save in local.
+
+Data is split because:
+* It allows rebalance without break the player progression.
+* Create a lighter user storage.
 
 ### Balancing details
 I have taken as reference for the balancing the AdVenture Capitalist data. 
